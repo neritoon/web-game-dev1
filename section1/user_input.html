@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>User Inputs</title>
+  </head>
+  <body>
+    <canvas width="500" height="500" id="ctx" style="border:2px solid #000000"/>
+    <script>
+
+      var ctx = document.getElementById('ctx').getContext('2d');
+
+      document.getElementById('ctx').onmousedown = function() {
+        ctx.fillStyle = 'blue';
+        ctx.fillRect(100, 100, 50, 50);
+      }
+
+      document.getElementById('ctx').onmouseup = function() {
+        ctx.fillStyle = 'red';
+        ctx.fillRect(100, 100, 50, 50);
+      }
+
+      document.onkeydown = function(event) {
+        // A - ASCII value = 65
+        // UP arrow - ASCII value = 38
+        // Space Bar - ASCII value = 32
+        if(event.keyCode == 65) {
+          ctx.fillText('A is pressed', 250,350);
+        }
+        else if(event.keyCode == 32){
+          ctx.fillText('Space bar is pressed', 250,350);
+        }
+      }
+
+    </script>
+  </body>
+</html>
